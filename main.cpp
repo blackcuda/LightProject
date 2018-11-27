@@ -9,31 +9,26 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    ILight *lightPtr[3];
+    CLed leds[100];
+    ILight* ledPtr[100];
 
-//    ILight *lightPtrs[5];
-    CLed led1;
-    CLed led2;
-    CLed led3;
-    CLed led4;
-    CLed led5;
-    CLed led6;
+    for (uint16_t index = 0; index < 100; index++)
+    {
+        leds[index].SetColour(static_cast<uint8_t>(index) + 1, 0, 0, 0);
 
-    lightPtr[0] = &led1;
+        ledPtr[index] = &leds[index];
+    }
 
-//    lightPtrs[0] = &led1;
-//    lightPtrs[1] = &led2;
+    CLightCollection segment2(ledPtr, 5, 5);
 
-    uint32_t amount = 2;
-//    CLightCollection seg1(lightPtrs, amount);
 
-//    lightPtrs[0] = nullptr;
-//    lightPtrs[1] = nullptr;
+    CLightCollection seg(ledPtr, 5, 20);
 
-//    lightPtrs[0] = &led3;
+    seg.AddLight(segment2);
 
-//    uint32_t amount2 = 1;
-//    CLightCollection seg2(lightPtrs, amount2);
+    seg.SetColour(60, 61, 62, 63);
+
+    seg.RemoveLight();
 
     return a.exec();
 }

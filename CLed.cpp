@@ -1,8 +1,11 @@
 #include "CLed.h"
 
 
-CLed::CLed() {
+CLed::CLed()
+    :m_red(0), m_green(0), m_blue(0), m_white(0)
+{
 
+    std::cout << "Create LED" << std::endl;
 }
 
 CLed::~CLed() {
@@ -10,7 +13,12 @@ CLed::~CLed() {
 }
 
 
-void CLed::setColour(uint8_t r)
+void CLed::SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
 {
-    std::cout << "set colour -> " << std::to_string(r) << std::endl;
+    m_red = r;
+    m_green = g;
+    m_blue = b;
+    m_white = w;
+
+    std::cout << "set colour -> " << std::to_string(m_red) << std::endl;
 }

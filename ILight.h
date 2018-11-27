@@ -6,14 +6,9 @@
 class ILight
 {
 public:
-    virtual ~ILight();
+    virtual ~ILight() = default;
 
-    virtual void setColour(uint8_t r) = 0;
+    virtual void SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w) = 0;
 };
-
-inline ILight::~ILight()
-{
-
-}
 
 #endif // ILIGHT_H

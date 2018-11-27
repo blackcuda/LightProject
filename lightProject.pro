@@ -17,7 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         CLed.cpp \
-    CLightCollection.cpp
+    CLightCollection.cpp \
+    CCollection.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -27,4 +28,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     ILight.h \
     CLed.h \
-    CLightCollection.h
+    CLightCollection.h \
+    CCollection.h
