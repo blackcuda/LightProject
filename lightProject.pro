@@ -17,8 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         CLed.cpp \
-    CLightCollection.cpp \
-    CCollection.cpp
+        CLightCollection.cpp \
+        CCollection.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

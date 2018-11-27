@@ -2,6 +2,8 @@
 
 #include <string.h>
 
+//template<class T>
+//CLightCollection<T>::CLightCollection(ILight** lightCollection, uint32_t amount, uint32_t startIndex)
 CLightCollection::CLightCollection(ILight** lightCollection, uint32_t amount, uint32_t startIndex)
 {
     memset(m_lights, 0, sizeof (m_lights));
@@ -42,14 +44,14 @@ void CLightCollection::RemoveLight()
     }
 }
 
-void CLightCollection::SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+void CLightCollection::SetColour(colour lightColour)
 {
     for (uint16_t index = 0; index < MAX_SIZE_COLLECTION; index++)
     {
         if (m_lights[index] != nullptr)
         {
-            std::cout << "LED" << index << ":" << std::endl;
-            m_lights[index]->SetColour(r, g, b, w);
+            std::cout << "Light" << index << ":" << std::endl;
+            m_lights[index]->SetColour(lightColour);
         }
     }
 }

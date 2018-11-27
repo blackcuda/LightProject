@@ -11,16 +11,18 @@ class CLed : public ILight
 public:
 
     CLed();
+
     ~CLed();
 
-    void SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w);
+    void SetColour(colour lightColour);
+
+    colour GetColour();
+
+    //void SetBrightNess();
 
 private:
 
-    uint8_t m_red;
-    uint8_t m_green;
-    uint8_t m_blue;
-    uint8_t m_white;
+    colour m_ledColour;
 };
 
 #endif // CLED_H

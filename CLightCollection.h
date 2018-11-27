@@ -6,10 +6,12 @@
 #include <iostream>
 
 #include "ILight.h"
+#include "CCollection.h"
 
 #define MAX_SIZE_COLLECTION 20
 
-class CLightCollection : public ILight
+//template <class T>
+class CLightCollection : public ILight//, CCollection<T>
 {
 public:
     CLightCollection(ILight** lightCollection, uint32_t amount, uint32_t startIndex);
@@ -19,7 +21,7 @@ public:
     void AddLight(ILight& light);
     void RemoveLight();
 
-    void SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w);
+    void SetColour(colour lightColour);
 
 private:
 

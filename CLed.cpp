@@ -2,23 +2,25 @@
 
 
 CLed::CLed()
-    :m_red(0), m_green(0), m_blue(0), m_white(0)
+    :m_ledColour()
 {
 
     std::cout << "Create LED" << std::endl;
 }
 
 CLed::~CLed() {
-    std::cout << "destruct CLED" << std::endl;
+    std::cout << "Destruct CLED" << std::endl;
 }
 
 
-void CLed::SetColour(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
+void CLed::SetColour(colour lightColour)
 {
-    m_red = r;
-    m_green = g;
-    m_blue = b;
-    m_white = w;
+    m_ledColour = lightColour;
 
-    std::cout << "set colour -> " << std::to_string(m_red) << std::endl;
+    std::cout << "set colour -> " << std::to_string(m_ledColour.red) << ", " << std::to_string(m_ledColour.green) << ", " << std::to_string(m_ledColour.blue) << ", " << std::to_string(m_ledColour.white) << std::endl;
+}
+
+colour CLed::GetColour()
+{
+    return m_ledColour;
 }
