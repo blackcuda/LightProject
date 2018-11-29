@@ -18,7 +18,8 @@ SOURCES += \
         main.cpp \
         CLed.cpp \
         CLightCollection.cpp \
-        CCollection.cpp
+        CCollection.cpp \
+    CDriverWrapper.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -29,4 +30,6 @@ HEADERS += \
     ILight.h \
     CLed.h \
     CLightCollection.h \
-    CCollection.h
+    CCollection.h \
+    ILedDriver.h \
+    CDriverWrapper.h

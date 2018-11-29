@@ -23,11 +23,14 @@ public:
 
     void SetColour(colour lightColour);
 
+    colour GetColour(void);
+
 private:
 
     uint16_t getLastLightIndex(void);
 
     ILight* m_lights[MAX_SIZE_COLLECTION];
+
 };
 
 #endif // CLIGHTCOLLECTION_H

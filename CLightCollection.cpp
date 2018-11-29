@@ -1,6 +1,6 @@
 #include "CLightCollection.h"
 
-#include <string.h>
+#include <cstring>
 
 //template<class T>
 //CLightCollection<T>::CLightCollection(ILight** lightCollection, uint32_t amount, uint32_t startIndex)
@@ -50,10 +50,34 @@ void CLightCollection::SetColour(colour lightColour)
     {
         if (m_lights[index] != nullptr)
         {
-            std::cout << "Light" << index << ":" << std::endl;
+//            std::cout << "Light" << index << ":" << std::endl;
             m_lights[index]->SetColour(lightColour);
         }
     }
+}
+
+colour CLightCollection::GetColour(void)
+{
+    colour segmentColour;
+
+    segmentColour.red = 0;
+    segmentColour.green = 0;
+    segmentColour.blue = 0;
+    segmentColour.white = 0;
+
+    uint16_t index = 0;
+
+    while(m_lights[index] == nullptr)
+    {
+        index++;
+    }
+
+    if (m_lights[index] != nullptr)
+    {
+        segmentColour =  m_lights[index]->GetColour();
+    }
+
+    return segmentColour;
 }
 
 

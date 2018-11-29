@@ -5,6 +5,7 @@
 #include <string>
 
 #include "ILight.h"
+#include "ILedDriver.h"
 
 class CLed : public ILight
 {
@@ -16,13 +17,17 @@ public:
 
     void SetColour(colour lightColour);
 
-    colour GetColour();
+    colour GetColour(void);
+
+    void SetLedDriver(ILedDriver* ledDriverPtr);
 
     //void SetBrightNess();
 
 private:
 
     colour m_ledColour;
+
+    ILedDriver* m_ledDriverPtr;
 };
 
 #endif // CLED_H

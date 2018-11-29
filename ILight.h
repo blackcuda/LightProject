@@ -17,6 +17,8 @@ public:
     virtual ~ILight() = default;
 
     virtual void SetColour(colour lightColour) = 0;
+
+    virtual colour GetColour(void) = 0;
 };
 
 #endif // ILIGHT_H
