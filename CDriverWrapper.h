@@ -16,17 +16,15 @@ struct CRGBW {
 class CDriverWrapper : public ILedDriver
 {
 public:
-    CDriverWrapper(ILight** ledPtr);
+    CDriverWrapper();
 
     ~CDriverWrapper();
 
     void SetLed();
 
-    void SetColour(colour ledColour);
+    void SetColour(Colour ledColour, uint16_t index);
 
 private:
-
-    ILight **m_ledPtr;
 
     CRGBW ledArray[100];
 

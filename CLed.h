@@ -7,6 +7,14 @@
 #include "ILight.h"
 #include "ILedDriver.h"
 
+
+struct LedInfo
+{
+    uint16_t Id;
+    uint8_t Brightness;
+    Colour Colour;
+};
+
 class CLed : public ILight
 {
 public:
@@ -15,17 +23,21 @@ public:
 
     ~CLed();
 
-    void SetColour(colour lightColour);
+    void SetId(uint16_t id);
 
-    colour GetColour(void);
+    void SetBrightness(uint8_t brightness);
+
+    void SetColour(Colour lightColour);
+
+    Colour GetColour(void);
 
     void SetLedDriver(ILedDriver* ledDriverPtr);
 
-    //void SetBrightNess();
-
 private:
 
-    colour m_ledColour;
+    void setValue();
+
+    LedInfo m_ledInfo;
 
     ILedDriver* m_ledDriverPtr;
 };

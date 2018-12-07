@@ -9,7 +9,7 @@ public:
 
     virtual ~ILedDriver() = default;
 
-    virtual void SetColour(colour ledColour) = 0;
+    virtual void SetColour(Colour ledColour, uint16_t index) = 0;
 
     virtual void SetLed() = 0;
 

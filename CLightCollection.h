@@ -21,9 +21,9 @@ public:
     void AddLight(ILight& light);
     void RemoveLight();
 
-    void SetColour(colour lightColour);
+    void SetColour(Colour lightColour);
 
-    colour GetColour(void);
+    Colour GetColour(void);
 
 private:
 

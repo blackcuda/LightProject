@@ -44,7 +44,7 @@ void CLightCollection::RemoveLight()
     }
 }
 
-void CLightCollection::SetColour(colour lightColour)
+void CLightCollection::SetColour(Colour lightColour)
 {
     for (uint16_t index = 0; index < MAX_SIZE_COLLECTION; index++)
     {
@@ -56,9 +56,9 @@ void CLightCollection::SetColour(colour lightColour)
     }
 }
 
-colour CLightCollection::GetColour(void)
+Colour CLightCollection::GetColour(void)
 {
-    colour segmentColour;
+    Colour segmentColour;
 
     segmentColour.red = 0;
     segmentColour.green = 0;
